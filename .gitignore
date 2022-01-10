@@ -1,10 +1,9 @@
+# maven编译文件
 target/
 
-### VS Code ###
 .vscode/
+.idea/
+.git/
 
-### idea ###
-.idea
-
-### git ###
-.git
+# mac os
+.DS_Store
