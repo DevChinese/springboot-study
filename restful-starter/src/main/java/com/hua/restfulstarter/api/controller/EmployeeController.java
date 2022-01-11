@@ -1,14 +1,14 @@
-package com.hua.restfulstarter.controller;
+package com.hua.restfulstarter.api.controller;
 
 import com.hua.restfulstarter.domain.entity.Employee;
 import com.hua.restfulstarter.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.image.ImageProducer;
 import java.util.List;
 
-@RestController
+
+@RestController  // @RestController指示每个方法返回的数据将直接写入响应体，而不是呈现模板。
 @RequestMapping("payroll")
 public class EmployeeController {
     @Autowired

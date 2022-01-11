@@ -2,6 +2,7 @@ package com.hua.restfulstarter.service;
 
 import com.hua.restfulstarter.domain.entity.Employee;
 import com.hua.restfulstarter.domain.mapper.EmployeeMapper;
+import com.hua.restfulstarter.exceptions.EmployeeNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,8 +36,7 @@ public class EmployeeService {
     public void deleteEmployee(Long id) {
         Employee employee = mapper.selectEmployeeById(id);
         if (employee == null) {
-            System.out.printf("id为%d的数据不存在", id);
-            return;
+            throw new EmployeeNotFoundException(id);
         }
         mapper.deleteEmployee(id);
     }
