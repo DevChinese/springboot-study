@@ -12,7 +12,7 @@ public class EmployeeService {
     @Autowired
     private EmployeeMapper mapper;
 
-    public Employee selectEmployeeById(int id) {
+    public Employee selectEmployeeById(Long id) {
         return mapper.selectEmployeeById(id);
     }
 
@@ -22,5 +22,22 @@ public class EmployeeService {
 
     public void addEmployee(Employee employee) {
         mapper.addEmployee(employee);
+    }
+
+    public void updateEmployee(Employee employee, Long id) {
+        if (id != employee.getId()) {
+            System.out.println("path variable 与 body 数据不一致！");
+            return;
+        }
+        mapper.updateEmployee(employee);
+    }
+
+    public void deleteEmployee(Long id) {
+        Employee employee = mapper.selectEmployeeById(id);
+        if (employee == null) {
+            System.out.printf("id为%d的数据不存在", id);
+            return;
+        }
+        mapper.deleteEmployee(id);
     }
 }

@@ -9,7 +9,7 @@
         <result column="role" jdbcType="VARCHAR" property="role" />
     </resultMap>
 
-    <select id="selectEmployeeById" parameterType="int" resultMap="EmployeeResultMap">
+    <select id="selectEmployeeById" parameterType="long" resultMap="EmployeeResultMap">
         select * from `employee` where id = #{id};
     </select>
 
@@ -23,5 +23,15 @@
         values (#{name}, #{role});
     </insert>
 
+    <update id="updateEmployee" parameterType="com.hua.restfulstarter.domain.entity.Employee">
+        update `employee`
+        set `name` = #{name}, `role` = #{role}
+        where `id` = #{id};
+    </update>
+
+    <delete id="deleteEmployee" parameterType="long">
+        delete from `employee`
+        where `id` = #{id};
+    </delete>
 </mapper>
 

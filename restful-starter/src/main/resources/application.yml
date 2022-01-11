@@ -16,3 +16,9 @@ mybatis:
 logging:
   level:
     com.hua.restfulstarter.domain.mapper: debug
+#  file:
+#    name: ./logs/app.log #日志存放的文件
+#  logback:
+#    rollingpolicy:
+#      max-file-size: 10MB
+#      max-history: 100
