@@ -15,8 +15,8 @@ public class EmployeeController {
     private EmployeeService employeeService;
     
     @GetMapping("/employee/{id}")
-    public String getEmployeeById(@PathVariable Long id) {
-        return employeeService.selectEmployeeById(id).toString();
+    public Employee getEmployeeById(@PathVariable Long id) {
+        return employeeService.selectEmployeeById(id);
     }
 
     @PostMapping("/employee")

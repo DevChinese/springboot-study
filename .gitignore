@@ -2,8 +2,19 @@
 target/
 
 .vscode/
+.classpath
+.project
+.settings
+
+### IntelliJ IDEA ###
 .idea/
+*.iws
+*.iml
+*.ipr
+
 .git/
 
 # mac os
 .DS_Store
+
+

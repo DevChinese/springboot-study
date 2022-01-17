@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  * 定制当抛出 EmployeeNotFoundException 异常时，给接口返回的信息
- * advice会自动与相关异常关联
+ * advice会自动与相关异常关联，应该是AOP
  * 关联了advice的异常，会被对应的advice handler处理，因此程序不会因为异常中断，而api也返回了定制的异常信息。
  */
 @ControllerAdvice
