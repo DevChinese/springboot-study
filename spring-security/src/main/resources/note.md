@@ -22,7 +22,7 @@ AuthenticationManager 可以在 authenticate() 方法中做一下3件事之一:
 AuthenticationException 是一个runtime异常。它通常由应用程序以通用方式处理，具体取决于应用程序的样式或用途。 换句话说，通常不期望用户代码来捕获和处理它。
 例如，Web UI 可能会呈现一个页面，显示身份验证失败，并且后端 HTTP 服务可能会发送 401 响应，根据上下文是否有 WWW-Authenticate 标头。
 
-AuthenticationManager 最常用的实现是 ProviderManager，它委托给一个 AuthenticationProvider 实例链。
+AuthenticationManager 最常用的实现是 ProviderManager，它委托给一个 AuthenticationProvider 实例链(`ProviderManager`中有个成员 `private List<AuthenticationProvider> providers`)。
 AuthenticationProvider 有点像 AuthenticationManager，但它有一个额外的方法允许调用者查询它是否支持给定的 Authentication 类型：
 ```java
 public interface AuthenticationProvider {
