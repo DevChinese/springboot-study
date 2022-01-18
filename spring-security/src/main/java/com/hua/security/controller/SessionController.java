@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 
-@RestController
+//@RestController
 public class SessionController {
 
 //    @PostMapping("/login")
